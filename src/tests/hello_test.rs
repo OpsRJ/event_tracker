@@ -1,9 +1,9 @@
 use warp::Filter;
 
 use crate::{
-    handlers::hello_handler,
-    routes::hello_route,
-    hello,
+    handlers::init_handler,
+    routes::init_route,
+    init,
 };
 
 // $cargo test -- --nocapture if you want to use println! etc.
@@ -21,7 +21,7 @@ mod tests {
         let res = warp::test::request() // 2.
             .method("GET")
             .path("/hello/eduardo")
-            .reply(&hello!()) // 3.
+            .reply(&init!()) // 3.
             .await;
 
         // 4.
